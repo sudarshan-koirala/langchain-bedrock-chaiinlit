@@ -1,4 +1,3 @@
-#from langchain_groq import ChatGroq
 from langchain_community.llms import Bedrock
 from langchain_core.prompts import ChatPromptTemplate
 from langchain.schema import StrOutputParser
@@ -13,7 +12,6 @@ async def on_chat_start():
     
     await cl.Message(content="Hello there, I am Titan LLM from AWS Bedrock. How can I help you ?").send()
 
-    #model = ChatGroq(temperature=0,model_name="llama3-70b-8192")
     
     model = Bedrock(
     credentials_profile_name="youtube", model_id="amazon.titan-text-express-v1"
